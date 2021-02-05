@@ -13,6 +13,8 @@
     "style:fix": "import-sort --write \"**/{src,tests,e2e}/**/*.ts\" && prettier --write \"**/{src,tests,e2e}/**/*.{*css,ts}\" && js-beautify \"**/src/**/*.html\"",
     "style": "import-sort -l \"**/{src,tests,e2e}/**/*.ts\" && prettier --check \"**/{src,tests,e2e}/**/*.{*css,ts}\"",
     "start": "ng serve --port 5000",
+    "start2": "ng serve ch2 --port 5000",
+    "start3": "ng serve ch3 --port 5000",
     "build": "ng build",
     "test": "ng test local-weather-app",
     "test:debug": "npm test -- --source-map",
