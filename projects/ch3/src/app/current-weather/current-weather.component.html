@@ -4,7 +4,7 @@
 </div>
 <div *ngIf="current">
   <div>
-    <span>{{current.city}}, {{current.country}}</span>
+    <span>{{current.city}}, {{current.country}} </span>
     <span>{{current.date | date:'fullDate'}}</span>
   </div>
   <div>
@@ -15,17 +15,3 @@
     {{current.description}}
   </div>
 </div>
-
-<!-- Null guarding: Strategy 2, Safe navigation operator
-<div>
-  <span>{{current?.city}}, {{current?.country}}</span>
-  <span>{{current?.date | date:'fullDate'}}</span>
-</div>
-<div>
-  <img [src]='current?.image'>
-  <span>{{current?.temperature | number:'1.0-0'}}℉</span>
-</div>
-<div>
-  {{current?.description}}
-</div>
--->

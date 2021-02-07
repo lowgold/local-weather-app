@@ -23,21 +23,16 @@ interface ICurrentWeatherData {
   name: string
 }
 
+export interface IWeatherService {
+  getCurrentWeather(city: string, country: string): Observable<ICurrentWeather>
+}
+
 @Injectable({
   providedIn: 'root',
 })
-export class WeatherService {
+export class WeatherService implements IWeatherService {
   constructor(private httpClient: HttpClient) {}
 
-  // Example implementation: Manually building URL string
-  // getCurrentWeather(city: string, country: string) {
-  //   return this.httpClient.get<ICurrentWeatherData>(
-  //     `${environment.baseUrl}api.openweathermap.org/data/2.5/weather?` +
-  //       `q=${city},${country}&appid=${environment.appId}`
-  //   )
-  // }
-
-  // Preferred implementation: Using HttpParams
   getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
     const uriParams = new HttpParams()
       .set('q', `${city},${country}`)

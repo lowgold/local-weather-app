@@ -1,12 +1,12 @@
 import { TestBed, waitForAsync } from '@angular/core/testing'
-
+import { createComponentMock } from 'angular-unit-test-helper'
 import { AppComponent } from './app.component'
 
 describe('AppComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [AppComponent],
+        declarations: [AppComponent, createComponentMock('CurrentWeatherComponent')],
       }).compileComponents()
     })
   )
